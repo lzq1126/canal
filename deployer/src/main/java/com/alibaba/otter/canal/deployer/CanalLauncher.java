@@ -80,6 +80,9 @@ public class CanalLauncher {
                 int scanIntervalInSecond = Integer.valueOf(CanalController.getProperty(managerProperties,
                     CanalConstants.CANAL_AUTO_SCAN_INTERVAL,
                     "5"));
+
+                // 开启一个只有一个线程的线程池自动扫描，配置。
+                // auto scan instance dir add/remove and start/stop instance
                 executor.scheduleWithFixedDelay(new Runnable() {
 
                     private PlainCanal lastCanalConfig;
